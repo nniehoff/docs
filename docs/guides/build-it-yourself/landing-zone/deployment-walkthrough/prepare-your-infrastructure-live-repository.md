@@ -48,7 +48,7 @@ see, it references `common`, `account`, and `region` HCL files which we’ll cre
 # -----------------------------------------------------------------------------
 
 locals {
-  common_vars  = read_terragrunt_config("${get_terragrunt_dir()}/common.hcl")
+  common_vars  = read_terragrunt_config(find_in_parent_folders("common.hcl"))
   account_vars = read_terragrunt_config(find_in_parent_folders("account.hcl"))
   region_vars  = read_terragrunt_config(find_in_parent_folders("region.hcl"))
 
